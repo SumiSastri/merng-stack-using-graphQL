@@ -11,27 +11,23 @@ import UpdateBook from "../content-pages/books/forms/UpdateBook";
 
 const PageRouting = () => {
   return (
-    <Router>
       <Routes>
-        {/* home */}
+        {/* Home page with links */}
         <Route path="/" element={<PageLinks />} />
 
-        {/* books */}
+        {/* Books */}
         <Route path="/books-and-authors" element={<BooksIndex />} />
         <Route path="/add-book-form" element={<AddBook />} />
-
-        {/* book clients */}
-        <Route path="/book-clients" element={<BookClientsIndex />} />
-
-        {/* book projects */}
-        <Route path="/book-projects" element={<BookProjectsIndex />} />
-
-        {/* Routes with IDs */}
         <Route path="/books-and-authors/:id" element={<DisplayBook />} />
         <Route path="/update-book-form/:id" element={<UpdateBook />} />
+
+        {/* Book Clients */}
+        <Route path="/book-clients" element={<BookClientsIndex />} />
+
+        {/* Book Projects */}
+        <Route path="/book-projects" element={<BookProjectsIndex />} />
         <Route path="/book-projects/:id" element={<DisplayBookProject />} />
       </Routes>
-    </Router>
   );
 };
 

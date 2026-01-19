@@ -3,85 +3,33 @@ import ReactDOM from 'react-dom/client';
 import {BrowserRouter} from "react-router-dom"
 import './index.css';
 import App from './App';
-// import reportWebVitals from './reportWebVitals';
+import { ApolloProvider } from "@apollo/client";
+import client from './apolloClient';  
 
-// Apollo client and error logging
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  HttpLink,
-  from
-} from "@apollo/client";
-import { onError } from "@apollo/client/link/error";
 
-// apollo client  and error initialisation
-const errorLink = onError(({ graphqlErrors, networkError }) => {
-  if (graphqlErrors) {
-    graphqlErrors.forEach(({ message }) => {
-      console.error(`Graphql error: ${message}`);
-    });
+function ErrorBoundary({ children }) {
+  try {
+    return children;
+  } catch (err) {
+    console.error("Render error:", err);
+    return <div>Something went wrong</div>;
   }
-  if (networkError) {
-    console.error(`Network error: ${networkError}`);
-  }
-});
+}
 
-
-
-const link = from([
-  errorLink,
-  new HttpLink({ uri: "http://localhost:4000/graphql" }),
-]);
-
-const client = new ApolloClient({
-  link,
-  cache: new InMemoryCache({
-    typePolicies: {
-      Query: {
-        fields: {
-          books: {
-            merge(existing, incoming) {
-              return incoming;
-            },
-          },
-
-          authors: {
-            merge(existing, incoming) {
-              return incoming;
-            },
-          },
-
-          bookClients: {
-            merge(existing, incoming) {
-              return incoming;
-            },
-          },
-
-          bookProjects: {
-            merge(existing, incoming) {
-              return incoming;
-            },
-          },
-          
-        },
-      },
-    },
-  })
-});
+// console.log("Index.jsx loaded");
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+// console.log("Root container:", document.getElementById('root'));
+// console.log("Rendering App now...");
 root.render(
   <React.StrictMode>
     <BrowserRouter>
     <ApolloProvider client={client}>
-    <App />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
     </ApolloProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();

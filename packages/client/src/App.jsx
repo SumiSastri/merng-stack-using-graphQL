@@ -6,7 +6,7 @@ import PageRouting from './routing/PageRouting';
 import HeaderComponent from "./common/header/HeaderComponent";
 import "./common/header/headerStyles.css"
 
-function App() {
+const App = () => {
   return (  
     <div className="App">   
    <HeaderComponent
@@ -22,3 +22,9 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+

@@ -102,12 +102,11 @@ export default defineConfig({
 2. `<Route path="/book-clients" element={<BookClientsIndex />} />`
 
 ```javascript
-    <Router>
       <Routes>
         {/* home */}
         <Route path="/" element={<PageLinks />} />
 ```
 
-- Route path takes the component prop name change to element, props have to be explicity declared
-- Links change
-- `useHistory` hook changed to `useNavigate` 
+- Route HOC props naming convention has changed from component to element, props have to be explicity declared
+- Router HOC is used only once in the `index.jsx` root of the app as `BrowserRouter` and is removed as `Router` HOC from a routing page
+- `useHistory` hook changed to `useNavigate`

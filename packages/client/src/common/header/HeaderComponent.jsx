@@ -14,27 +14,18 @@ const HeaderComponent = ({
   return (
     <div
       className={className}
-      datatestid={datatestid}
+      data-testid={datatestid}
       id={id}
-      image={image}
-      isopen={isopen}
-      name={name}
       onClick={onClick}
     >
-      {
-        children
-        // = {// <div>
-        //     <img className={className} alt="logo" src={logo} />
-        // </div>
-        // <h2>Header</h2>
-        // <h5>Subheader</h5>}
-      }
+      {image && <img src={image} alt={name || "logo"} className={className} />}
+      {children}
     </div>
   );
 };
 
 HeaderComponent.propTypes = {
-  children: PropTypes.any,
+  children: PropTypes.node, 
   className: PropTypes.string,
   datatestid: PropTypes.string,
   id: PropTypes.string,
@@ -45,3 +36,5 @@ HeaderComponent.propTypes = {
 };
 
 export default HeaderComponent;
+
+
