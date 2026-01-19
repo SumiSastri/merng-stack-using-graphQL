@@ -53,9 +53,11 @@ const AddBook = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log("Log submit new book:", name, genre, authorId);
-
-    createBook(name, genre, authorId);
-    // console.log(createBook, "BOOK PAYLOAD");
+    createBook({ variables: { name, genre, authorId } })
+        // console.log(createBook, "BOOK PAYLOAD");
+    .then(() => {
+      refetch();  // ✅ only called after mutation
+    });
   
     const resetFormFields = () => {
       setName("");

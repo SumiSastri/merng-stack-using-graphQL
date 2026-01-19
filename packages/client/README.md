@@ -80,3 +80,12 @@ export default defineConfig({
 ```
 
 - Ensure `App.js` changed to `jsx` v18 changelog is stricter. Every `.js` file will have to change to `.jsx` to compile
+
+
+React Router 5-6 breakiing changes
+
+Breaking changes:
+
+- Switch replaced by Routes HOC 
+-  `<Route path="/books-and-authors" element={<BooksIndex />} />`
+

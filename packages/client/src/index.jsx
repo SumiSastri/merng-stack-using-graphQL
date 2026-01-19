@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import {BrowserRouter} from "react-router-dom"
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import reportWebVitals from './reportWebVitals';
 
 // Apollo client and error logging
 import {
@@ -18,11 +18,15 @@ import { onError } from "@apollo/client/link/error";
 // apollo client  and error initialisation
 const errorLink = onError(({ graphqlErrors, networkError }) => {
   if (graphqlErrors) {
-    graphqlErrors.map(({ message, location, path }) => {
-      return alert(`Graphql error ${message}`);
+    graphqlErrors.forEach(({ message }) => {
+      console.error(`Graphql error: ${message}`);
     });
   }
+  if (networkError) {
+    console.error(`Network error: ${networkError}`);
+  }
 });
+
 
 
 const link = from([
@@ -80,4 +84,4 @@ root.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();

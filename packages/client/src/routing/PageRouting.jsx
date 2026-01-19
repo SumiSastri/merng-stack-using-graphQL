@@ -1,5 +1,4 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PageLinks from "./PageLinks";
 
 import BookClientsIndex from "../content-pages/bookClients/BookClientsIndex";
@@ -12,27 +11,27 @@ import UpdateBook from "../content-pages/books/forms/UpdateBook";
 
 const PageRouting = () => {
   return (
-    <div>
-      <Router>
-        <Switch>
-          {/* home */}
-          <Route exact path='/' component={PageLinks} />
-          {/* books */}
-          <Route exact path='/books-and-authors' component={BooksIndex} />
-          <Route exact path='/add-book-form' component={AddBook} />
-         
-          {/* book clients */}
-          <Route exact path='/book-clients' component={BookClientsIndex} />
-          {/* book projects */}
-          <Route exact path='/book-projects' component={BookProjectsIndex} />
+    <Router>
+      <Routes>
+        {/* home */}
+        <Route path="/" element={<PageLinks />} />
 
-          {/* Routes with IDs */}
-          <Route path='/books-and-authors/:id' component={DisplayBook} />
-          <Route path='/update-book-form/:id' component={UpdateBook} />  
-          <Route path='/book-projects/:id' component={DisplayBookProject} />
-        </Switch>
-      </Router>
-    </div>
+        {/* books */}
+        <Route path="/books-and-authors" element={<BooksIndex />} />
+        <Route path="/add-book-form" element={<AddBook />} />
+
+        {/* book clients */}
+        <Route path="/book-clients" element={<BookClientsIndex />} />
+
+        {/* book projects */}
+        <Route path="/book-projects" element={<BookProjectsIndex />} />
+
+        {/* Routes with IDs */}
+        <Route path="/books-and-authors/:id" element={<DisplayBook />} />
+        <Route path="/update-book-form/:id" element={<UpdateBook />} />
+        <Route path="/book-projects/:id" element={<DisplayBookProject />} />
+      </Routes>
+    </Router>
   );
 };
 
