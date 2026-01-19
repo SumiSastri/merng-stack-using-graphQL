@@ -17,9 +17,12 @@ _Client-side_
 - Compiler Vite
 
 _Query Language_
-GraphQL
+
+- GraphQL
+- Client-server - Apollo
 
 _Server-side_
+
 MongoDb
 Express
 
@@ -41,5 +44,9 @@ Several migration steps with breaking changes:
 
 ### React Router v5 to v6
 
-- Switch HOC replaced by Routes HOC, change imports and nesting of HOC
-- Address breaking changes in Links HOC and routing requirements
+Several breaking changes some HOCs deprecated, others added
+
+- BrowserRouter wraps all routes in root - top of the tree
+- Switch HOC replaced by Routes HOC - next in the tree
+- Route HOC props naming conventions changed - last in the tree
+- Disambiguation Routes and Route are separate HOCs
