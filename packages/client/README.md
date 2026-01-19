@@ -94,6 +94,7 @@ export default defineConfig({
 ### React Router v5-v6 breaking changes
 
 - [Upgrade to React Router v6 Documentation](https://reactrouter.com/upgrading/v6)
+- [Changelog React Router](https://github.com/remix-run/react-router/blob/main/CHANGELOG.md#futurev7_starttransition)
 
 - _Cheatsheet_
 
@@ -109,4 +110,4 @@ export default defineConfig({
 
 - Route path takes the component prop name change to element, props have to be explicity declared
 - Links change
-- `useHistory` hook changed to `useNavigate`
+- `useHistory` hook changed to `useNavigate` 
