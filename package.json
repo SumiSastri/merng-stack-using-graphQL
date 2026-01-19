@@ -3,6 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "devDependencies": {
-    "lerna": "^5.0.0"
+    "lerna": "^v9.0.3"
   }
 }
