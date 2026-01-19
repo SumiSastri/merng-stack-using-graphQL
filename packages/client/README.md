@@ -1,5 +1,15 @@
 # Scaffolding
 
+## Package management
+
+nvm, npm and node updated
+
+nvm 0.39.7
+npm 10.2.4 to v11.7.0
+Node: v21.6.1 to 25.4.0 with `nvm install node`
+
+- [Guidance - geek-for-geeks](https://www.geeksforgeeks.org/node-js/update-node-js-and-npm-to-latest-version/)
+
 ## Migration from Lerna 5 to v9.0.3
 
 Update version in `package.json` file
@@ -81,11 +91,22 @@ export default defineConfig({
 
 - Ensure `App.js` changed to `jsx` v18 changelog is stricter. Every `.js` file will have to change to `.jsx` to compile
 
+### React Router v5-v6 breaking changes
 
-React Router 5-6 breakiing changes
+- [Upgrade to React Router v6 Documentation](https://reactrouter.com/upgrading/v6)
 
-Breaking changes:
+- _Cheatsheet_
 
-- Switch replaced by Routes HOC 
--  `<Route path="/books-and-authors" element={<BooksIndex />} />`
+1. Change imports to Routes instead of Switch, the Route paths now take the HOC Routes
+2. `<Route path="/book-clients" element={<BookClientsIndex />} />`
 
+```javascript
+    <Router>
+      <Routes>
+        {/* home */}
+        <Route path="/" element={<PageLinks />} />
+```
+
+- Route path takes the component prop name change to element, props have to be explicity declared
+- Links change
+- `useHistory` hook changed to `useNavigate`

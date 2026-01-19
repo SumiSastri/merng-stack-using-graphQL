@@ -1,28 +1,33 @@
 # The MERNG stack - Mongo-Express-React-Node-GraphQL
 
-Client:
-React-19
-Typescript
+This repo has been updated and key packages migrated in steps:
 
-Server:
-MongoDb
-Express
-Node: v21.6.1 upgraded to v25.4.0 with `nvm install node`
-
-Query Language:
-GraphQL
-
-Package manager:
-npm 10.2.4 upgraded to v11.7.0
-Lerna
+_Package-management_
 
 nvm 0.39.7
+npm 10.2.4 to v11.7.0
+Node: v21.6.1 to 25.4.0 with `nvm install node`
 
-## Migration updates
+Lerna v5 to v9
+
+_Client-side_
+
+- React-19
+- Typescript added
+- Compiler Vite
+
+_Query Language_
+GraphQL
+
+_Server-side_
+MongoDb
+Express
+
+## Migration changelog
 
 ### Lerna from v5 to v9
 
-No breaking changes
+- No breaking changes
 
 ### React from 17 to 18 as interim move stablise at 18 before migrating to 19
 
@@ -32,10 +37,9 @@ Several migration steps with breaking changes:
 - Uninstall recompose
 - Add Vite as compiler
 - Move to strict mode all file extensions changed
+- Stablise at v18
 
 ### React Router v5 to v6
 
-Breaking changes:
-
-- Switch replaced by Routes HOC 
--  `<Route path="/books-and-authors" element={<BooksIndex />} />`
+- Switch HOC replaced by Routes HOC, change imports and nesting of HOC
+- Address breaking changes in Links HOC and routing requirements
