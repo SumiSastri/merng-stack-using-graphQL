@@ -1,76 +1,82 @@
 # Scaffolding
 
-Installation
-`npx install create-react-app client`
+## Migration from Lerna 5 to v9.0.3
 
-cd client
-`npm install @apollo/client graphql react-router react-router-dom`
+Update version in `package.json` file
+`rm package-lock.json`
+`npm install`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Migration from React 17 to 19
 
-## Available Scripts
+- Resolving several dependency errors from v-17 which used CRA (create-react-app)
+- Migrate to v-18 and stablise as there are several breaking changes in 19
 
-In the project directory, you can run:
+- [Upgrade guide docs](https://react.dev/blog/2022/03/08/react-18-upgrade-guide)
+- [Change-log](https://github.com/facebook/react/blob/main/CHANGELOG.md)
 
-### `npm start`
+- _Cheatsheet_
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1.Remove all CRA deps
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+rm -rf node_modules
+rm -rf build
+rm -rf public
+rm package-lock.json
+```
 
-### `npm test`
+- `npm uninstall recompose` deprecated dependency since React-18 and migration to Hooks
+- Remove old deps like react-scripts from package-json and change deps to
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+  "dependencies": {
+    "@apollo/client": "^3.5.5",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.2.0",
+    "@testing-library/user-event": "^13.5.0",
+    "graphql": "^16.5.0",
+    "lodash": "^4.17.21",
+    "lodash.flowright": "^3.5.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.4.0",
+    "react-router-dom": "^6.3.0",
+    "web-vitals": "^2.1.4"
+  },
+  ```
 
-### `npm run build`
+2.Run `npm install` and check deps correctly installed
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm ls react (all deps should be 18.1.0 or above but not 19.0)
+npm ls react-scripts (should be empty)
+npm ls react-router-dom (should be 6.30.3)
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3.Install Vite plugin `npm install -D vite @vitejs/plugin-react`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Add scripts to `.package-json`
 
-### `npm run eject`
+```bash
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+}
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Add `vite.config.js` to root
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+export default defineConfig({
+  plugins: [react()],
+  server: {
+    port: 3000
+  }
+})
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Ensure `App.js` changed to `jsx` v18 changelog is stricter. Every `.js` file will have to change to `.jsx` to compile

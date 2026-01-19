@@ -7,7 +7,7 @@ import { useGetBookIdQuery } from "../../../utils/hooks/book/useGetBookIdQuery";
 // STEP 2 mutate front end data and pass the id as a prop to a parent component
 import { UPDATE_BOOK } from "../../../utils/mutations/book-mutations/updateBook";
 // components
-import ErrorHasOccurredComponent from "../../../common//errors/ErrorHasOccurredComponent";
+import ErrorHasOccurredComponent from "../../../common/errors/ErrorHasOccurredComponent";
 import Loading from "../../../common/loading/Loading";
 
 // STEP 3: pass prop in child - UPDATE IS CREATE on specific id got from parent <DisplayBook/>

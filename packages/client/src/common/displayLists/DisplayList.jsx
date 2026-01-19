@@ -3,8 +3,8 @@ import { useQuery } from "@apollo/client";
 // data import constants and assign to queryName
 
 // components
-import Loading from "../../common/loading/Loading";
-import ErrorHasOccurredComponent from "../../common/errors/ErrorHasOccurredComponent";
+import Loading from "../loading/Loading";
+import ErrorHasOccurredComponent from "../errors/ErrorHasOccurredComponent";
 import DisplayCard from "../displayCard/DisplayCard";
 
 const DisplayList = () => {
