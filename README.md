@@ -34,6 +34,10 @@ Node 24.13.0 (LTS) - latest v25 non-stable version
 - Migration changelog
 - CSS - combination of bootstrap and vanilla css (cosmetic changes - add mobile breakpoints and styling)
 
+5._Client-side-server_
+
+- Apollo v3 to v4 - React-19 ready
+
 ## In planning
 
 _Client-side_

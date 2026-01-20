@@ -4,7 +4,7 @@ So when we get the data all we need to do is return the key-value pairs that we 
 
 An example of how the query method works
 
-```
+```bash
 <!-- parses graphql - as it is not JS -->
 import {gql} from "@apollo/client";
 
@@ -19,4 +19,3 @@ const GET_BOOK_CLIENTS = gql`
     }
 `;
 ```
-

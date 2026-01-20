@@ -91,11 +91,13 @@ This CSP policy can whitelist some sites - template for updates
       ">
 ```
 
-__Client-side dependencies__
-You need to install graphQL both on the FE and BE
-
 __Server-side dependencies__
-There are several options like grapql-yoga and systems like graph-cms, etc., 
+
+- [Apollo](https://www.npmjs.com/package/@apollo/client)
+- [Apollo getting started](https://www.apollographql.com/docs/react/get-started?utm_source=github&utm_medium=apollographql_apollo-client&utm_campaign=readme)
+
+
+There are several options like grapql-yoga and systems like graph-cms, etc.,
 
 The libraries used in this repo are:
 
