@@ -1,16 +1,44 @@
-# Table of Contents
+# Migration changelog
 
-Books, authors, book clients and book projects repo using GraphQL-React-MongoDb and Lerna as a package manager
+This section documents the key migration phases and updates
 
-# Scaffolding:
-Code editor: VS Code
-Prequisites: Install Node.js
+## January 2026
+
+1._Node environment_
+
+- nvm 0.39.7
+- Node: v21.6.1 to 25.4.0 with `nvm install node`
+- No breaking changes
+
+2._Package-management_
+
+- npm 10.2.4 to v11.7.0
+- Lerna v5 to v9
+- No breaking changes
+
+### React from v17 to v18
+
+Several migration steps with breaking changes:
+
+- Remove CRA (Bootstrapped with `npx create-react-app`)
+- Remove deps(`npm install @apollo/client grapql react-router react-router-dom react-icons lodash lodash.flowright`)
+- Uninstall recompose
+- Add Vite as compiler
+- Move to strict mode all file extensions changed
+- Stablise at v18
+
+### React Router v5 to v6
+
+Several breaking changes some HOCs deprecated, others added
+
+- BrowserRouter wraps all routes in root - top of the tree
+- Switch HOC replaced by Routes HOC - next in the tree
+- Route HOC props naming conventions changed - last in the tree
+- Disambiguation Routes and Route are separate HOCs
+
 
 __Client-side dependencies__
 You need to install graphQL both on the FE and BE
-
-Bootstrapped with `npx create-react-app`
-`npm install @apollo/client grapql react-router react-router-dom react-icons lodash lodash.flowright`
 
 Add bootstrap CDK to `index.html`
 
@@ -97,6 +125,6 @@ app.use(helmet({
   contentSecurityPolicy: false,
 }));
 ```
-# Further Documentation and Resources
+
 
 Please see the docs folder and `resources.md` this repo credits use of materials from all of these sources.

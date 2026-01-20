@@ -1,8 +1,12 @@
 # The MERNG stack - Mongo-Express-React-Node-GraphQL
 
-<img src="packages/docs/assets/GraphQL-React-Mongo-App.png" alt="Authors Repo using GraphQL-React-MongoDb" height="350"/>
+<img src="packages/docs/assets/GraphQL-React-Mongo-App.png" alt="Book publishing repo using GraphQL-React-MongoDb" height="350"/>
 
-This repo has been updated and key packages migrated in phases
+An book-publishing workflow repo using GraphQL-React-MongoDb and Lerna as a package manager. This repo is updated and key packages migrated in phases.
+
+Code editor: VS Code
+
+## January 2026
 
 1._Node environment_
 
@@ -25,6 +29,15 @@ This repo has been updated and key packages migrated in phases
 - Documentation updates
 - Migration changelog
 
+## In planning
+
+_Client-side_
+
+- React-18 to React-19
+- React Prop Types to TypeScript
+- Zod validation
+- Vite testing
+
 _Query Language_
 
 - GraphQL
@@ -35,27 +48,6 @@ _Server-side_
 MongoDb
 Express
 
-## Migration changelog
+### Detailed documentation
 
-### Lerna from v5 to v9
-
-- No breaking changes
-
-### React from 17 to 18 as interim move stablise at 18 before migrating to 19
-
-Several migration steps with breaking changes:
-
-- Removing CRA
-- Uninstall recompose
-- Add Vite as compiler
-- Move to strict mode all file extensions changed
-- Stablise at v18
-
-### React Router v5 to v6
-
-Several breaking changes some HOCs deprecated, others added
-
-- BrowserRouter wraps all routes in root - top of the tree
-- Switch HOC replaced by Routes HOC - next in the tree
-- Route HOC props naming conventions changed - last in the tree
-- Disambiguation Routes and Route are separate HOCs
+See detailed migration changelog in README for docs folder. Technical details of migration in README docs in client and server packages.
