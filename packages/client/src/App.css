@@ -18,6 +18,13 @@ body {
 h1 {
   color: burlywood;
 }
+h2 {
+  color: brown;
+}
+h3{
+  color: grey;
+}
+
 
 #book-details{
   width: 40%;
