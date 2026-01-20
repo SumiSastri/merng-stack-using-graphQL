@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "../.././App.css";
 import DisplayBookClientsList from "./display/DisplayBookClientsList";
@@ -8,9 +8,9 @@ const BookClientsIndex = () => {
   return (
     <div>
       <h2>Book Client's Page</h2>
-      <Link to='/' className='btn btn-dark btn-sm w-25 d-inline ms-auto'>
+      <NavLink to='/' className='btn btn-dark btn-sm w-25 d-inline ms-auto'>
         Back to Home Page
-      </Link>
+      </NavLink>
       <div className='container'>
         <br />
         <AddBookClient />
