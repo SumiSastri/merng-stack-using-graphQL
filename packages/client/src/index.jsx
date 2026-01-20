@@ -4,7 +4,7 @@ import {BrowserRouter} from "react-router-dom"
 import './index.css';
 import App from './App';
 import { ApolloProvider } from "@apollo/client/react";
-import client from './apolloClient';  
+import client from './client-server/apolloClient';  
 
 
 function ErrorBoundary({ children }) {

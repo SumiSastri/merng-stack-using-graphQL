@@ -1,4 +1,4 @@
-import PageLinks from "../../routing/PageLinks";
+import PageLinks from "../PageLinks";
 
 const HomePage = () => {
   return (

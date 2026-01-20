@@ -1,6 +1,6 @@
 import { FaTrash } from "react-icons/fa";
 import { useMutation } from "@apollo/client/react";
-import { DELETE_BOOK_CLIENT } from "../../../utils/mutations/bookClientMutations";
+import { DELETE_BOOK_CLIENT } from "../../../utils/mutations/book-client-mutations/bookClientMutations";
 import { GET_BOOK_CLIENTS } from "../../../utils/queries/queries";
 
 const BookClientRow = ({ bookClient }) => {
