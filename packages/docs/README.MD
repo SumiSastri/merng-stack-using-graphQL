@@ -1,6 +1,6 @@
 # Migration changelog
 
-This section time-lines the key migration phases.
+This section time-lines the key migration phases from v1.0.0 to v2.0.0
 Updates technical details and debugging in client and server README docs.
 
 ## January 2026
@@ -38,11 +38,13 @@ Several breaking changes some HOCs deprecated, others added
 - Route HOC props naming conventions changed - last in the tree
 - Disambiguation Routes and Route are separate HOCs
 
+Non-breaking changes- refactors
 
-__Client-side dependencies__
-You need to install graphQL both on the FE and BE
+- Use NavLinks HOC instead of Link for routing
 
-Add bootstrap CDK to `index.html`
+### CSS
+
+Add bootstrap CDK to `index.html` - vanilla CSS used for static components
 
  ```bash
 <!-- Bootstrap CDN -->
@@ -59,6 +61,39 @@ Add bootstrap CDK to `index.html`
   ></script>
 <!-- Bootstrap CDN ends -->
 ```
+
+### CSP - Cross Site Scripting Policy
+
+The CSP in the index.html file has been added based on MDN docs
+
+```bash
+  <!-- CSP Policy -->
+  <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src https://*; child-src 'none';">
+  <!-- CSP policy ends -->
+```
+
+This CSP policy can whitelist some sites - template for updates
+
+```bash
+<meta http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self' https://trusted-cdn.com;
+        style-src 'self' 'unsafe-inline';
+        img-src 'self' https://images.example.com;
+        font-src 'self' https://fonts.gstatic.com;
+        connect-src 'self' https://api.example.com;
+        frame-src 'none';
+        object-src 'none';
+        base-uri 'self';
+        form-action 'self';
+      ">
+```
+
+__Client-side dependencies__
+You need to install graphQL both on the FE and BE
+
 __Server-side dependencies__
 There are several options like grapql-yoga and systems like graph-cms, etc., 
 
@@ -70,22 +105,15 @@ express-graphql works well with JavaScript, express in a node environment.
 
 __Package management__
 Lerna can be added to manage the 2 repos more efficiently.
+
 1. Install lerna in root `npm install lerna --save-dev`
 2. Initialise the package `npx lerna init`
 You should have an empty packages folder in root as well as a `lerna.json` and `package.json` file
-3. In the `package.json` as well as the `lerna.json` add a version `  "version": "1.0.0",`
-4. Add a `.gitignore` file to ignore node modules
+3. Add a `.gitignore` file to ignore node modules
 
 Run these package methods if needed.
 `npx lerna clean -y` removes duplicate node modules and any mismatches in the existing packages
 `npx lerna bootstrap --hoist` - hoists dependencies from all packages in the root node module
-# Scripts:
-Update packages:
-In root `npx lerna bootstrap`
-
-Client-side:
-cd packages/client - `npm run start`
-LocalHost: `http://localhost:3000/`
 
 Server-side:
 - set up MongoDb/ whitelist IP/ check password and `.env` file for MONGO_URI
@@ -111,22 +139,10 @@ MongoDb
 Mongoose - ORM
 Connect with Mongo Atlas
 
-# CSP 
-
-The CSP in the index.html file has been added based on MDN docs
-```
-  <!-- CSP Policy -->
-  <meta http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src https://*; child-src 'none';">
-  <!-- CSP policy ends -->
-```
 To ensure you can get the `graphql` data in the express server ensure that in the `helmet` midware CSP is set to false
 
-```
+```bash
 app.use(helmet({
   contentSecurityPolicy: false,
 }));
 ```
-
-
-Please see the docs folder and `resources.md` this repo credits use of materials from all of these sources.

@@ -4,7 +4,12 @@ A book repo using GraphQL-React-MongoDb and Lerna as a package manager. This rep
 
 <img src="packages/docs/assets/GraphQL-React-Mongo-App.png" alt="Book publishing repo using GraphQL-React-MongoDb" height="350"/>
 
-Code editor: VSCode
+- Code editor : VSCode
+
+- Scripts
+- Client: `nvm use && npm run dev` 
+- LocalHost: `http://localhost:3000/`
+- In root `npx lerna bootstrap` - once all packages are updated, this is a quick way to update dependencies across packages
 
 ## January 2026
 
@@ -27,6 +32,7 @@ Node 24.13.0 (LTS) - latest v25 non-stable version
 
 - Documentation updates
 - Migration changelog
+- CSS - combination of bootstrap and vanilla css (cosmetic changes - add mobile breakpoints and styling)
 
 ## In planning
 
