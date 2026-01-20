@@ -1,14 +1,16 @@
 # Migration changelog
 
-This section documents the key migration phases and updates
+This section time-lines the key migration phases.
+Updates technical details and debugging in client and server README docs.
 
 ## January 2026
 
 1._Node environment_
 
 - nvm 0.39.7
-- Node: v21.6.1 to 25.4.0 with `nvm install node`
-- No breaking changes
+
+Node LTS -  v24.13.0
+Note odd numbers of Node versions will not work LTS v20, v22 and v24 only
 
 2._Package-management_
 
