@@ -1,21 +1,22 @@
-// wrapper component for page links
-import { Link } from "react-router-dom";
+import {NavLink } from "react-router-dom";
+// refactor using NavLink for routing links
+import "./pageLinkStyles.css";
 
 const PageLinks = () => {
   return (
-    <div>
-      <ul>
+    <nav className="page-links">
+      <ul className="page-links-list">
         <li>
-          <Link to="/books-and-authors">Books and Authors</Link>
+          <NavLink to="/books-and-authors">Books and Authors</NavLink>
         </li>
         <li>
-          <Link to="/book-clients">Book Clients</Link>
+          <NavLink to="/book-clients">Book Clients</NavLink>
         </li>
         <li>
-          <Link to="/book-projects">Book Projects</Link>
+          <NavLink to="/book-projects">Book Projects</NavLink>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 };
 

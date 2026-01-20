@@ -15,7 +15,7 @@ body {
   height: 100%;
 }
 
-h1 {
+  h1 {
   color: burlywood;
 }
 h2 {
@@ -24,6 +24,15 @@ h2 {
 h3{
   color: grey;
 }
+  h4{
+    color:olive;
+  }
+  h5{
+    color: goldenrod;
+  }
+  h6{
+    color: black;
+  }
 
 
 #book-details{
