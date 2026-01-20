@@ -2,13 +2,6 @@
 
 Books, authors, book clients and book projects repo using GraphQL-React-MongoDb and Lerna as a package manager
 
-<img src="packages/docs/assets/GraphQL-React-Mongo-App.png" alt="Authors Repo using GraphQL-React-MongoDb" height="350"/>
-
-1. Scaffolding
-2. Scripts
-3. Dbs
-4. CSP
-5. Further documentation
 # Scaffolding:
 Code editor: VS Code
 Prequisites: Install Node.js
@@ -20,7 +13,8 @@ Bootstrapped with `npx create-react-app`
 `npm install @apollo/client grapql react-router react-router-dom react-icons lodash lodash.flowright`
 
 Add bootstrap CDK to `index.html`
- ```
+
+ ```bash
 <!-- Bootstrap CDN -->
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"

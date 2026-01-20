@@ -1,20 +1,29 @@
 # The MERNG stack - Mongo-Express-React-Node-GraphQL
 
-This repo has been updated and key packages migrated in steps:
+<img src="packages/docs/assets/GraphQL-React-Mongo-App.png" alt="Authors Repo using GraphQL-React-MongoDb" height="350"/>
 
-_Package-management_
+This repo has been updated and key packages migrated in phases
 
-nvm 0.39.7
-npm 10.2.4 to v11.7.0
-Node: v21.6.1 to 25.4.0 with `nvm install node`
+1._Node environment_
 
-Lerna v5 to v9
+- nvm 0.39.7
+- Node: v21.6.1 to 25.4.0 with `nvm install node`
 
-_Client-side_
+2._Package-management_
 
-- React-19
-- Typescript added
+- npm 10.2.4 to v11.7.0
+- Lerna v5 to v9
+
+3._Client-side_
+
+- React-17 to React-18
 - Compiler Vite
+- ReactRouter-5 to v6
+
+4._Admin_
+
+- Documentation updates
+- Migration changelog
 
 _Query Language_
 
