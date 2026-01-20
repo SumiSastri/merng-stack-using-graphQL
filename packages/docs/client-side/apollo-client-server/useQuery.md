@@ -21,7 +21,7 @@ There are essentially 2 queries made
 1. Get all resources required in local state - in this case only the name and id required for the component in the Books section of the app
 
 ```
-import { useQuery, gql } from "@apollo/client";
+import { gql } from `@apollo/client/core`;
 
 const GET_BOOKS = gql`
   query {
@@ -47,7 +47,7 @@ export const useGetBooksQuery = () => {
 This method allows you to pass the resource/ doc/ data by its Id as a prop into a component where the update and delete methods can be written and local state of that component mutated.
 
 ```
-import { useQuery, gql } from "@apollo/client";
+import { gql } from `@apollo/client/core`;
 
 const GET_BOOK_ID = gql`
   query GetBookId($id: String!) {

@@ -50,7 +50,9 @@ _Client-side_
 _Query Language_
 
 - GraphQL
-- Client-server - Apollo
+- Client-server - Apollo v3.5.5 to v4.0
+- Framework-agnostic core with React exports moved to @apollo/client/react
+- Observable implementation now uses rxjs instead of zen-observable
 
 _Server-side_
 
@@ -59,4 +61,4 @@ Express
 
 ### Detailed documentation
 
-See detailed migration changelog in README for docs folder. Technical details of migration in README docs in client and server packages.
+See detailed migration changelog in CHANGELOG in the docs folder. Technical details in client-side and server-side folders.

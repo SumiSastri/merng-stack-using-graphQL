@@ -62,9 +62,13 @@ Add bootstrap CDK to `index.html` - vanilla CSS used for static components
 <!-- Bootstrap CDN ends -->
 ```
 
+### Apollo-Server
+
+
+
 ### CSP - Cross Site Scripting Policy
 
-The CSP in the index.html file has been added based on MDN docs
+The CSP in the index.html file has been added based on MDN docs - needs review breaking changes
 
 ```bash
   <!-- CSP Policy -->
