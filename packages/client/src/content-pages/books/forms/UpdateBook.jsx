@@ -13,14 +13,14 @@ import Loading from "../../../common/loading/Loading";
 // STEP 3: pass prop in child - UPDATE IS CREATE on specific id got from parent <DisplayBook/>
 const UpdateBook = ({ bookId }) => {
   const { error, loading, data } = useGetBookIdQuery(bookId);
-  // console.log(data, "update book data")
+  console.log(data, "update book data")
   // STEP 4 log and check data flows from parent to child component
 
   // STEP 5: reassign queried data to local state 
   // UPDATE IS A PARTIALLY FILLED FORM USING A QUERY FROM DB OF EXISTING DATA
   const [name, setName] = useState(data.book.name);
   const [genre, setGenre] = useState(data.book.genre);
-  // console.log(name)
+  console.log(name)
   // STEP 6: check data flow
   
   // STEP 7: Create update payload mutate component state of fields to be updated

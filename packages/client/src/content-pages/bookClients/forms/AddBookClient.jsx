@@ -25,7 +25,7 @@ const AddBookClient = () => {
   const { loading, error, refetch } = useGetBookClientsQuery();
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("Log new book-client:", name, phone, email);
+    console.log("Log new book-client:", name, phone, email);
 
     // validation
     if (name === "" || email === "" || phone === "") {
@@ -34,7 +34,7 @@ const AddBookClient = () => {
 
     // new payload
     createBookClient(name, phone, email);
-    // console.log(createBookClient, "BOOK CLIENT PAYLOAD");
+    console.log(createBookClient, "BOOK CLIENT PAYLOAD");
 
     // reset form fields on submit
     const resetFormFields = () => {

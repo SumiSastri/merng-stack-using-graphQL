@@ -52,9 +52,9 @@ const AddBook = () => {
   const {refetch } = useGetBooksQuery();
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log("Log submit new book:", name, genre, authorId);
+    console.log("Log submit new book:", name, genre, authorId);
     createBook({ variables: { name, genre, authorId } })
-        // console.log(createBook, "BOOK PAYLOAD");
+        console.log(createBook, "BOOK PAYLOAD");
     .then(() => {
       refetch();  // ✅ only called after mutation
     });

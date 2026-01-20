@@ -7,7 +7,7 @@ import BookClientRow from "./BookClientRow";
 
 const DisplayBookClientsList = () => {
   const { error, loading, data } = useGetBookClientsQuery();
-  // console.log("BookClientsList:", { error, data, loading });
+  console.log("BookClientsList:", { error, data, loading });
   if (error) return <ErrorHasOccurredComponent />;
   if (loading) return <Loading />;
   return (

@@ -21,7 +21,7 @@ const AddBookProjectForm = () => {
     GET_BOOK_CLIENTS,
     GET_BOOK_PROJECTS
   );
-  // console.log(data, "GET BOOK CLIENTS data");
+  console.log(data, "GET BOOK CLIENTS data");
 
   // load book clients and display with custom function
   function displayBookClients(loading, data) {
@@ -62,13 +62,13 @@ const AddBookProjectForm = () => {
   const { refetch } = useGetBookProjectsQuery();
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(
-    //   "Log new book project:",
-    //   name,
-    //   description,
-    //   bookClientId,
-    //   status
-    // );
+    console.log(
+      "Log new book project:",
+      name,
+      description,
+      bookClientId,
+      status
+    );
 
     if (
       name === "" ||
@@ -80,7 +80,7 @@ const AddBookProjectForm = () => {
     }
 
     createBookProject(name, description, bookClientId, status);
-    // console.log(createBookProject, "BOOK Project PAYLOAD");
+    console.log(createBookProject, "BOOK Project PAYLOAD");
 
     const resetFormFields = () => {
       setName("");
