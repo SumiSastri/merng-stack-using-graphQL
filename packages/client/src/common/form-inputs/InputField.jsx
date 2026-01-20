@@ -37,7 +37,6 @@ const InputField = (props) => {
   );
 };
 
-// Type checks props using the react library
 InputField.propTypes = {
   className: PropTypes.string,
   datatestid: PropTypes.string,

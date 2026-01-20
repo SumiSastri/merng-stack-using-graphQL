@@ -1,6 +1,8 @@
+import PropTypes from "prop-types";
 // import { Link } from "react-router-dom";
 
-const BookProjectCard = ({ apiData, children }) => {
+const BookProjectCard = (props) => {
+  const { apiData, children } = props;
   return (
     <div className='col-md-6'>
       <div className='card mb-3'>
@@ -25,4 +27,10 @@ const BookProjectCard = ({ apiData, children }) => {
     </div>
   );
 };
+
+BookProjectCard.propTypes = {
+  apiData: PropTypes.object,
+  children: PropTypes.node,
+};
+
 export default BookProjectCard;

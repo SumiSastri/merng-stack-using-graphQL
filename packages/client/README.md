@@ -1,20 +1,47 @@
 # Scaffolding
 
-## Package management
-
-nvm, npm and node updated
-
-nvm 0.39.7
-npm 10.2.4 to v11.7.0
-Node: v21.6.1 to 25.4.0 with `nvm install node`
+## Node environment
 
 - [Guidance - geek-for-geeks](https://www.geeksforgeeks.org/node-js/update-node-js-and-npm-to-latest-version/)
 
-## Migration from Lerna 5 to v9.0.3
+nvm - update with `nvm install -g @latest`
 
-Update version in `package.json` file
-`rm package-lock.json`
-`npm install`
+Node LTS -  v24.13.0 (explicitly install)
+
+```bash
+rm -rf node_modules package-lock.json
+nvm install 24.13.0   
+npm install
+```
+
+## Package management
+
+npm 10.2.4 to (npm v11.6.2)
+
+Check file path of your node and npx packages - should be in binary files (bin/node)
+
+```bash
+where node
+where npm
+where npx
+node -e "console.log('node:', process.version, '\nexe:', process.execPath)"
+```
+
+Pin to root with dot files
+
+```bash
+.npmrc
+.nvmrc
+```
+
+### Migration from Lerna 5 to v9.0.3
+
+Update version in `package.json` file - no breaking changes
+
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
 
 ## Migration from React 17 to 19
 
@@ -110,3 +137,21 @@ export default defineConfig({
 - Route HOC props naming convention has changed from component to element, props have to be explicity declared
 - Router HOC is used only once in the `index.jsx` root of the app as `BrowserRouter` and is removed as `Router` HOC from a routing page
 - `useHistory` hook changed to `useNavigate`
+
+### Debug logs and challenges
+
+- Node versions not matching required Vite packages - change from v21 upgraded to v24
+- React components not rendering - change components `.js` files to `.jsx` to adhere to strict mode in v18
+- React components not rendering after `.jsx` updates - ReactRouter v5-v6 fixes required
+- React components not rendering - errorBoundary added to `index.jsx`
+- No errors, no console errors - components still not rendering - debug logs added
+
+```bash
+// console.log("Index.jsx loaded");
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+// console.log("Root container:", document.getElementById('root'));
+// console.log("Rendering App now...");
+```
+
+- Logs showed script tags mandatory although Vite docs say No script tags needed: Vite injects your entry point automatically
