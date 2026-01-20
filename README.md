@@ -27,6 +27,7 @@ Node 24.13.0 (LTS) - latest v25 non-stable version
 - React-17 to React-18
 - Compiler Vite
 - ReactRouter-5 to v6
+- Client-server - Apollo v3.5.5 to v4.0
 
 4._Admin_
 
@@ -38,6 +39,10 @@ Node 24.13.0 (LTS) - latest v25 non-stable version
 
 - Apollo v3 to v4 - React-19 ready
 
+6._Query Language_
+
+- GraphQL
+
 ## In planning
 
 _Client-side_
@@ -46,19 +51,14 @@ _Client-side_
 - React PropTypes to TypeScript
 - Zod validation
 - Vite testing
-
-_Query Language_
-
-- GraphQL
-- Client-server - Apollo v3.5.5 to v4.0
-- Framework-agnostic core with React exports moved to @apollo/client/react
-- Observable implementation now uses rxjs instead of zen-observable
+- CSP meta updates
 
 _Server-side_
 
 MongoDb
 Express
 
-### Detailed documentation
+## Docs
 
-See detailed migration changelog in CHANGELOG in the docs folder. Technical details in client-side and server-side folders.
+- See CHANGELOG-TIMELINE in the docs folder for more granular view of changes.
+- Technical details in packages/client/MIGRATION.md

@@ -64,7 +64,9 @@ Add bootstrap CDK to `index.html` - vanilla CSS used for static components
 
 ### Apollo-Server
 
-
+- Several breaking changes
+- Legacy imports to be updated as react exports moved to @apollo/client/react
+- - Framework-agnostic core exports into a @core package
 
 ### CSP - Cross Site Scripting Policy
 

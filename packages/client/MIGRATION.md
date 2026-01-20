@@ -5,7 +5,6 @@
 - [Guidance - geek-for-geeks](https://www.geeksforgeeks.org/node-js/update-node-js-and-npm-to-latest-version/)
 
 nvm - update with `nvm install -g @latest`
-
 Node LTS -  v24.13.0 (explicitly install)
 
 ```bash
@@ -137,6 +136,36 @@ export default defineConfig({
 - Router HOC is used only once in the `index.jsx` root of the app as `BrowserRouter` and is removed as `Router` HOC from a routing page
 - `useHistory` hook changed to `useNavigate`
 
+### Apollo client-side server for GraphQL v3.3-v4 breaking changes
+
+- Key changes from v3
+- Framework-agnostic core with React exports moved to @apollo/client/react
+- Observable implementation now uses rxjs instead of zen-observable
+
+Remove old deps and reinstall
+
+```bash
+rm -rf node_modules
+rm -rf build
+rm -rf public
+rm package-lock.json
+npm install @apollo/client@latest graphql rxjs
+```
+
+- [Quick start and Apollo docs](https://www.apollographql.com/docs/react/migrating/apollo-client-4-migration)
+- [Changelog Apollo client-side server](https://github.com/apollographql/apollo-client/blob/main/CHANGELOG.md)
+- [Codemods](https://www.apollographql.com/docs/react/migrating/apollo-client-4-migration#codemod)
+
+_Cheatsheet_
+
+| Key Import codemod                           | Apollo Client 4 import         |
+| -------------------------------------------- | ------------------------------ |
+| `useQuery`, `useMutation`, `useSubscription` | `@apollo/client/react`         |
+| `ApolloClient`, `InMemoryCache`, `HttpLink`  | `@apollo/client/core`          |
+| `gql`                                        | `@apollo/client/core`          |
+| React context utilities                      | `@apollo/client/react/context` |
+| ApolloProvider                               | `@apollo/client/react`         |
+
 ### Debug logs and challenges
 
 - Node versions not matching required Vite packages - change from v21 upgraded to v24
@@ -154,22 +183,4 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 ```
 
 - Logs showed script tags mandatory although Vite docs say No script tags needed: Vite injects your entry point automatically
-
-### Apollo client-side server for GraphQL v3.3-v4 breaking changes
-
-- [Changelog Apollo client-side server](https://github.com/apollographql/apollo-client/blob/main/CHANGELOG.md)
-
-- Key changes from v3
-- Framework-agnostic core with React exports moved to @apollo/client/react
-- Observable implementation now uses rxjs instead of zen-observable
-[Codemods](https://www.apollographql.com/docs/react/migrating/apollo-client-4-migration#codemod)
-
-_Cheatsheet_
-
-| Key Import codemod                           | Apollo Client 4 import         |
-| -------------------------------------------- | ------------------------------ |
-| `useQuery`, `useMutation`, `useSubscription` | `@apollo/client/react`         |
-| `ApolloClient`, `InMemoryCache`, `HttpLink`  | `@apollo/client/core`          |
-| `gql`                                        | `@apollo/client/core`          |
-| React context utilities                      | `@apollo/client/react/context` |
-| ApolloProvider                               | `@apollo/client/react`         |
+- Apollo installation bugs - remove lurking client side files - do the same with lerna at monorepo level and `npm install`
