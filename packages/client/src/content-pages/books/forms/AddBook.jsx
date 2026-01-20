@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useQuery, useMutation } from "@apollo/client";
+import { useQuery, useMutation } from '@apollo/client/react';
 import { Link } from "react-router-dom";
 // styling
 import "../../../App.css";

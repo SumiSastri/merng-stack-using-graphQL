@@ -1,4 +1,4 @@
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client/core';
 
 // function to get the data
 const GET_BOOKS = gql`

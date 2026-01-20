@@ -1,4 +1,6 @@
-import { useQuery } from "@apollo/client";
+// ✅ Apollo Client 4 style
+import { useQuery } from '@apollo/client/react';
+
 
 // data import constants and assign to queryName
 

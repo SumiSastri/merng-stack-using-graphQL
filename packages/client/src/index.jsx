@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import {BrowserRouter} from "react-router-dom"
 import './index.css';
 import App from './App';
-import { ApolloProvider } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client/react";
 import client from './apolloClient';  
 
 
@@ -16,11 +16,11 @@ function ErrorBoundary({ children }) {
   }
 }
 
-// console.log("Index.jsx loaded");
+console.log("Index.jsx loaded");
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-// console.log("Root container:", document.getElementById('root'));
-// console.log("Rendering App now...");
+console.log("Root container:", document.getElementById('root'));
+console.log("Rendering App now...");
 root.render(
   <React.StrictMode>
     <BrowserRouter>

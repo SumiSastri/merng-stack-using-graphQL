@@ -1,6 +1,6 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
-import { useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/client/react";
 // import { useState } from "react";
 // queries
 import { GET_BOOK_ID, GET_BOOKS } from "../../../utils/queries/queries";

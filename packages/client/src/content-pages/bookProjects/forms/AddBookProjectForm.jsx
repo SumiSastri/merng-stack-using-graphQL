@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaList } from "react-icons/fa";
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation, useQuery } from '@apollo/client/react';
 
 // data
 import { useGetBookProjectsQuery } from "../../../utils/hooks/bookProjects/useGetBookProjectsQuery";

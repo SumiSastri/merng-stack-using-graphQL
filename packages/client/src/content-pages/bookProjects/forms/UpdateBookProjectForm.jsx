@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useMutation, useQuery } from "@apollo/client";
+import { useMutation, useQuery } from '@apollo/client/react';
 
 // data
 import { GET_BOOK_PROJECT_ID} from "../../../utils/queries/queries";

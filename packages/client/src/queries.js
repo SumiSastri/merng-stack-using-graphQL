@@ -1,5 +1,5 @@
-// parses graphql - as it is not JS
-import { gql } from '@apollo/client';
+// parses graph query language - GQL
+import { gql } from '@apollo/client/core';
 
 const GET_AUTHORS = gql`
     {

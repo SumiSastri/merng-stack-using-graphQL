@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { useQuery, useMutation } from "@apollo/client";
+import { useQuery, useMutation } from '@apollo/client/react';
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 // data

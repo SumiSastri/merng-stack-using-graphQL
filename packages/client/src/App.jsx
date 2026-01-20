@@ -14,7 +14,7 @@ const App = () => {
     <div className="App">   
    <DisplayHeader
       className="app-header">
-        <h1>GraphQL & MongoDB App</h1>
+        <h1>Merng Stack Book App</h1>
 
     <DisplayImage
           src={bookImage}

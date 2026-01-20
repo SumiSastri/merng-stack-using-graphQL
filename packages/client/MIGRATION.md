@@ -67,17 +67,16 @@ rm package-lock.json
 
 ```bash
   "dependencies": {
-    "@apollo/client": "^3.5.5",
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "graphql": "^16.5.0",
+    "@apollo/client": "^4.1.0",
+    "graphql": "^16.12.0",
     "lodash": "^4.17.21",
     "lodash.flowright": "^3.5.0",
+    "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
+    "rxjs": "^7.8.2",
     "web-vitals": "^2.1.4"
   },
   ```
@@ -155,3 +154,22 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 ```
 
 - Logs showed script tags mandatory although Vite docs say No script tags needed: Vite injects your entry point automatically
+
+### Apollo client-side server for GraphQL v3.3-v4 breaking changes
+
+- [Changelog Apollo client-side server](https://github.com/apollographql/apollo-client/blob/main/CHANGELOG.md)
+
+- Key changes from v3
+- Framework-agnostic core with React exports moved to @apollo/client/react
+- Observable implementation now uses rxjs instead of zen-observable
+[Codemods](https://www.apollographql.com/docs/react/migrating/apollo-client-4-migration#codemod)
+
+_Cheatsheet_
+
+| Key Import codemod                           | Apollo Client 4 import         |
+| -------------------------------------------- | ------------------------------ |
+| `useQuery`, `useMutation`, `useSubscription` | `@apollo/client/react`         |
+| `ApolloClient`, `InMemoryCache`, `HttpLink`  | `@apollo/client/core`          |
+| `gql`                                        | `@apollo/client/core`          |
+| React context utilities                      | `@apollo/client/react/context` |
+| ApolloProvider                               | `@apollo/client/react`         |

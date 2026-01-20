@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from '@apollo/client/core';
 
 // the mutuation should have the same name as back end
 const CREATE_BOOK_CLIENT = gql`

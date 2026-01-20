@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from `@apollo/client/core`;
 
 // schema for status is an enum of a specific type (see backend to match)
 const CREATE_BOOK_PROJECT = gql`
