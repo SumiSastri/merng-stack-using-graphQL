@@ -1,40 +1,24 @@
 # What is GraphQL
 
-Facebook started GraphQL as an internal project. They started the GraphQL project to overcome data fetching issues in their native mobile platform.
+Facebook started GraphQL as an internal project. They started the GraphQL project to overcome data fetching issues in their native mobile platform. In 2015, Facebook [open-sourced GraphQL](https://graphql.org/)
 
-GraphQL was Facebook's opportunity to rethink mobile app data fetching from the perspective of product designers and developers. It moved the focus of development to the client apps where designers and developers spend their time and attention on.
+GraphQL is not a library. It's not a product. It's not a database. It is both a language and a run-time environment. It's main function was to query data from backend databases and then manage this data in the state of a React UI component.
 
-In 2015, Facebook open-sourced GraphQL.
+Prounounced `grafical`, and written in JavaScript it is database and storage engine agonstic.
 
-GraphQL is not a library. It's not a product. It's not a database. It is both a language and a run-time environment. It's main function is as a query language to call APIs.
-
-Prounounced `grafical`, it is a run-time environment that mocks up a front allowing you to test the GraphQL server.
-
-It is spun up with an Express server on local host. It is an in-browser tool for writing, validating, and testing GraphQL queries.
-
-The language is strongly-typed, with methods for queries, mutations, subscriptions and fragments.
-
-The run-time environment fulfils queries that have come back from the server response data.
-
-It is an alternative to the REST API - so instead of hitting a URL endpoint and getting a massive JSON object back, the GraphQL language lets you write a query to request for exactly the data that you want and receive the results while the GraphQL runtime environment helps you filter out all the data that is not required.
-
-GraphQL provides clients the power to ask for exactly what they need and receive the response with what they asked for. With GraphQL you can get all the data that you need within a single request. GraphQL allows you to aggregate queries and fetch all the data in one request, avoiding multiple request-response cycles.
+It is an alternative to the REST API, GraphQL allows you to write a strongly-typed query to request for exactly the data required and receive type-safe results.
 
 ## How is GraphQL different from REST?
 
-REST APIs, or representational state transfer APIs, transfers a representation of the state in the data-layer of the app in the form of a request header to the API-end point. The request is then matched and a response is sent back through the HTTP (Hyper-Text-Transfer-Protocol) request-response cycle.
+REST APIs, or representational state transfer APIs, transfers a representation of the state in the data-layer of the app in the form of a request header to the API-end point. The request is then matched and a response is sent back through the HTTP (Hyper-Text-Transfer-Protocol) request-response cycle. Each data-set required by the data-layer in the front-end of the app needs a matching API.
 
-Each data-set required by the data-layer in the front-end of the app needs a matching API.
+For example, to create a book app, an API for the books, authors, the genres of books require a create-update-delete (CRUD) route for each of these operations. The request send out sends back a response in a `.json` file, all the data is sent back. There is a data-transformation process in the front-end of the app. Data is mutated (modified) after the `.json` response is received.
 
-For example: If we are creating a music catalog, we need an API for the musicians, the record labels, the genres of music and we need to create the CRUD routes for each of these operations. The request send out sends back a response in `json`, all the data is sent back. There is a data-transformation process in the front-end of the app in the data-layer - filtering/ modifying the data returned so that it is suitable for the front-end page/ component to be rendered.
+With GraphQL, this filtering out of unwanted data happens in the query method and the response is returned `.json` ready for use in the application state. With one query GraphQl aggregates the data you require for the application. There is no under or over fetching of data - this improves the efficiency of the call.
 
-With graphQL, this filtering out of unwanted data happens in the query method and the response is returned `.json` therefore only one query is needed as you can ask for one genre and all the musicians in that genre with one request. graphQl aggregates the data you require for the application. There is no under or over fetching of data - this improves the efficiency of the call.
+REST retreives a significant amount of data, inbuilt in the HTTP request as cached data ( data saved in a buffer temporarily). This is not a feature of GraphQL. Client-side servers like Apollo, used in this application, cache data.
 
-Because REST retreives a significant amount of data, inbuilt in the HTTP request is caching. This is not a feature of GraphQL. Some libraries like Apollo and Relay come with caching options.
-
-In terms of testing and deployment, graphQL queries are easier and quicker to test than REST where every route has to be tested and data validated.
-
-GraphQL is also easy to integrate into legacy systems that use REST. A hybrid system can operate until the switch over.
+In terms of testing and deployment, GraphQL queries are easier and quicker to test than REST where every route has to be tested and data validated. GraphQL is also easy to integrate into legacy systems that use REST. A hybrid system can operate until the switch over.
 
 ## GraphQL advantages
 
@@ -63,3 +47,8 @@ GraphQL is also easy to integrate into legacy systems that use REST. A hybrid sy
 - Caching not embedded as in HTTP - so you have to refetch data (done with Apollo)
 - Error handling and schema validation require client-server libraries as add-ons (or write logger functions)
 - Hack risks due to CSP allowing access to internals of the schema
+
+
+#### FURTHER READING
+
+- Lee Byron, "GraphQL a data query language"[Available at GraphQL blogs](https://graphql.org/blog/2015-09-14-graphql/)

@@ -1,4 +1,7 @@
-Introduction
+# The GraphQL eco-system
+
+It is just a query language and it is completely agnostic of the language. Due to this, plenty of client and server libraries have evolved across multiple languages in the GraphQL ecosystem.
+
 Tools and libraries that are available in the GraphQL ecosystem. GraphQL is just a specification and there is no programming language tied to it. Due to this, there are plenty of libraries developed to support different languages.
 
 If you take a look at the big picture architecture, we have a client which could be your mobile, web, or desktop app that needs to request data from the server. The server then needs to process that request and interact with the database or other microservices to obtain that information. The server finally responds back to the client. Now the client then uses that information to update its user interface. Here is where it makes sense to explore the options in the GraphQL ecosystem.
@@ -6,8 +9,8 @@ If you take a look at the big picture architecture, we have a client which could
 GraphQL Clients are the layer that handles talking to the server and getting the response back.  
  The next layer is the GraphQL Server. That takes care of the creation of the API and handling the query from the client and sends the appropriate response back.
 
-GraphQL Client
-The GraphQL Client handles sending requests or queries to the server and it receives the response in the form of a JSON from the server. It also integrates well with your front-end view components and it is responsible for any updates to the UI after it receives a response from the server.
+## GraphQL Client
+The GraphQL Client handles sending requests or queries to the server and it receives the response in the form of a J`.json` file from the server. It also integrates well with your front-end view components and it is responsible for any updates to the UI after it receives a response from the server.
 
 Caching is crucial for better performance. You may want to cache the data that was previously requested from the server and ensure a better user experience. The GraphQL Clients can handle caching the query results for you. What else can the client do? GraphQL is entirely based on the schema and the schema essentially acts like a contract between the client and the server.
 
@@ -24,3 +27,9 @@ The next layer that we are going to see is the database to GraphQL Server. Prism
 
 GraphQL Tools
 GraphQL is known for its awesome developer experience. Let's dive into some of the cool tools that the GraphQL community has created. GraphiQL; we already saw GraphiQL in the core concepts module. We saw how easy it is to query GraphQL APIs and write mutations using GraphiQL. GraphiQL is an in-browser IDE for writing, validating, and testing GraphQL queries. You can write queries to retrieve data from the API, write mutations to make changes as well. The best thing about GraphiQL is the life syntax that helps you out as you type. Validation errors are also highlighted when you write a query. It also lets you explore the documentation of the API, and that is super helpful. Overall, this is such a handy tool for developers working with GraphQL schema. GraphQL Voyager. Representing something visually is far more effective than just reading code. I always like to create visual diagrams to understand my code and the architecture. Sometimes we draw class diagrams to visually understand the overall architecture of a software system. The GraphQL Voyager is one such tool that represents any GraphQL API as an interactive graph. This is a perfect tool if you want to explore any complex GraphQL APIs. Developers also use this tool during design of the overall data model. Let's look at a demo from their homepage to get an idea of what this visual representation looks like. All right, this is how the GraphQL Voyager looks like. You can see that it is represented as visual models with several chains and links to other models there. This is the perfect way for you to visualize a GraphQL schema and how things are connected to each other. Now let's try clicking on one of them and see what happens. I've clicked on Root and zoomed in there, and you see that Root has plenty of fields and the types are defined too because GraphQL is a type-safe language. You can click on any of these items and go from there. Now we clicked on Film, and we see how Root is connected to film and film has its own set of types. And now we went onto Person, and you can see what Person entails, and you can click on any other item from there. And we moved onto Vehicle. You get the idea. This is the perfect visual representation of a GraphQL schema. GraphQL Faker. This library is used to mock your API with realistic data from faker.js. It doesn't require any additional coding and this is a perfect tool for testing and coding against future APIs or extending your existing APIs. You can check out this library from its GitHub page here. You can read the documentation here to understand more about the GraphQL Faker and how it works architecturally. GraphQL Visual Editor. I already told you how I like visual models. This is another great tool with which you can create schemas by joining visual blocks. The GraphQL Editor transforms them into code. Isn't that super cool? You don't need to write any code and all you have to do is create the visual blocks. It is a perfect tool to understand your GraphQL schema. The GraphQL ecosystem is growing at an amazing speed with thousands of contributors today. There are plenty of tools, client libraries, and server libraries that are out there to help you out. All you have to do is pick and choose the best fit for you. This is the best time for you to start working on GraphQL because of all the support that is available in the GraphQL ecosystem.
+
+
+
+## Resources from FB (https://github.com/chentsulin/awesome-graphql)
+
+Mocks (https://graphql.org/blog/2016-04-19-mocking/)
