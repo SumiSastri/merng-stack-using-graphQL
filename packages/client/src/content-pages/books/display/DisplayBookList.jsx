@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 
 // queries
-import { useGetBooksQuery } from "../../../utils/hooks/book/useGetBooksQuery";
-import { GET_BOOKS } from "../../../utils/queries/queries";
+import { useGetBooksQuery } from "../../../apolloClient/utils/hooks/book/useGetBooksQuery";
+import { GET_BOOKS } from "../../../apolloClient/utils/queries/index";
 // components
 import Loading from "../../../common/loading/Loading";
 import ErrorHasOccurredComponent from "../../../common/errors/ErrorHasOccurredComponent";

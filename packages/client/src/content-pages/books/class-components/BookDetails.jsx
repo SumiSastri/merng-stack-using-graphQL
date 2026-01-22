@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {gql} from '@apollo/client';
-import { GET_BOOK_ID } from '../../../utils/queries';
+import { GET_BOOK_ID } from '../../../apolloClient/utils/queries';
 
 class BookDetails extends Component {
     displayBookDetails(){

@@ -3,9 +3,9 @@ import { useQuery, useMutation } from '@apollo/client/react';
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 // data
-import { GET_BOOK_PROJECT_ID } from "../../../utils/queries/queries";
-import { DELETE_BOOK_PROJECT } from "../../../utils/mutations/book-project-mutations/deleteBookProjectMutation";
-import { GET_BOOK_PROJECTS } from "../../../utils/queries/queries";
+import { GET_BOOK_PROJECT_ID } from "../../../apolloClient/utils/queries";
+import { DELETE_BOOK_PROJECT } from "../../../apolloClient/utils/mutations/book-project-mutations/deleteBookProjectMutation";
+import { GET_BOOK_PROJECTS } from "../../../apolloClient/utils/queries";
 
 // components
 import Loading from "../../../common/loading/Loading";

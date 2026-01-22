@@ -3,12 +3,12 @@ import { FaList } from "react-icons/fa";
 import { useMutation, useQuery } from '@apollo/client/react';
 
 // data
-import { useGetBookProjectsQuery } from "../../../utils/hooks/bookProjects/useGetBookProjectsQuery";
-import { CREATE_BOOK_PROJECT } from "../../../utils/mutations/book-project-mutations/createBookProjectMutation";
+import { useGetBookProjectsQuery } from "../../../apolloClient//utils/hooks/bookProjects/useGetBookProjectsQuery";
+import { CREATE_BOOK_PROJECT } from "../../../apolloClient/utils/mutations/book-project-mutations/createBookProjectMutation";
 import {
   GET_BOOK_CLIENTS,
   GET_BOOK_PROJECTS,
-} from "../../../utils/queries/queries";
+} from "../../../apolloClient/utils/queries";
 
 const AddBookProjectForm = () => {
   const [name, setName] = useState("");

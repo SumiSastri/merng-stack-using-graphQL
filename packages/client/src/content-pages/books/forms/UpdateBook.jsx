@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client/react";
 import { FaUser } from "react-icons/fa";
 // STEP 1 set up front-end query data by ID for single resource
-import { GET_BOOK_ID } from "../../../utils/queries/queries";
-import { useGetBookIdQuery } from "../../../utils/hooks/book/useGetBookIdQuery";
+import { GET_BOOK_ID } from "../../../apolloClient/utils/queries/index";
 // STEP 2 mutate front end data and pass the id as a prop to a parent component
-import { UPDATE_BOOK } from "../../../utils/mutations/book-mutations/updateBook";
+import { UPDATE_BOOK } from "../../../apolloClient/utils/mutations/book-mutations/updateBook";
 // components
 import ErrorHasOccurredComponent from "../../../common/errors/ErrorHasOccurredComponent";
 import Loading from "../../../common/loading/Loading";

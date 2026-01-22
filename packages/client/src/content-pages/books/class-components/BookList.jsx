@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {gql} from '@apollo/client';
 
 // data
-import { GET_BOOKS } from '../../../utils/queries';
+import { GET_BOOKS } from '../../../apolloClient/utils/queries';
 // components
 import BookDetails from './BookDetails';
 class BookList extends Component {

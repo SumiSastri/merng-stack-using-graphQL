@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 // styling
 import "../../../App.css";
 // STEP 1 set up front-end query data required - check types against back end schema
-import { useGetBooksQuery } from "../../../utils/hooks/book/useGetBooksQuery";
+import { useGetBooksQuery } from "../../../apolloClient/utils/hooks/book/useGetBooksQuery";
 // STEP 2 mutate front-end data - check against back end eg - string template can be called
 // CREATE_BOOK but the actual mutuation the same name as back end addBook()
-import { CREATE_BOOK } from "../../../utils/mutations/book-mutations/createBook";
+import { CREATE_BOOK } from "../../../apolloClient/utils/mutations/book-mutations/createBook";
 
 // This query is to load authors and does not use a hook
-import { GET_AUTHORS } from "../../../utils/queries/queries";
+import { GET_AUTHORS } from "../../../apolloClient/utils/queries/index";
 
 // components
 import Loading from "../../../common/loading/Loading";
@@ -54,10 +54,10 @@ const AddBook = () => {
     e.preventDefault();
     console.log("Log submit new book:", name, genre, authorId);
     createBook({ variables: { name, genre, authorId } })
-        console.log(createBook, "BOOK PAYLOAD");
-    .then(() => {
-      refetch();  // ✅ only called after mutation
-    });
+  .then((result) => {
+    console.log(result, "BOOK PAYLOAD");
+    refetch(); // ✅ only after mutation
+  });
   
     const resetFormFields = () => {
       setName("");

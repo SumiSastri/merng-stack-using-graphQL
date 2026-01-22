@@ -1,5 +1,5 @@
 // data
-import { useGetBookClientsQuery } from "../../../utils/hooks/bookClients/useGetBookClientsQuery";
+import { useGetBookClientsQuery } from "../../../apolloClient//utils/hooks/bookClients/useGetBookClientsQuery";
 // components
 import Loading from "../../../common/loading/Loading";
 import ErrorHasOccurredComponent from "../../../common/errors/ErrorHasOccurredComponent";

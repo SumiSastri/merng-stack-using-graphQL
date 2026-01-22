@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useMutation, useQuery } from '@apollo/client/react';
 
 // data
-import { GET_BOOK_PROJECT_ID} from "../../../utils/queries/queries";
-import { UPDATE_BOOK_PROJECT } from "../../../utils/mutations/book-project-mutations/bookProjectMutations";
+import { GET_BOOK_PROJECT_ID} from "../../../apolloClient/utils/queries";
+import { UPDATE_BOOK_PROJECT } from "../../../apolloClient//utils/mutations/book-project-mutations/bookProjectMutations";
+
 // components
 import Loading from "../../../common/loading/Loading";
 import ErrorHasOccurredComponent from "../../../common/errors/ErrorHasOccurredComponent";

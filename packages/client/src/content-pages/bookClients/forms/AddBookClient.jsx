@@ -3,8 +3,8 @@ import { FaUser } from "react-icons/fa";
 import { useMutation } from "@apollo/client/react";
 
 // data
-import { useGetBookClientsQuery } from "../../../utils/hooks/bookClients/useGetBookClientsQuery";
-import { CREATE_BOOK_CLIENT } from "../../../utils/mutations/book-client-mutations/bookClientMutations";
+import { useGetBookClientsQuery } from "../../../apolloClient/utils/hooks/bookClients/useGetBookClientsQuery";
+import { CREATE_BOOK_CLIENT } from "../../../apolloClient/utils/mutations/book-client-mutations/bookClientMutations";
 // components
 import Loading from "../../../common/loading/Loading";
 import ErrorHasOccurredComponent from "../../../common/errors/ErrorHasOccurredComponent";

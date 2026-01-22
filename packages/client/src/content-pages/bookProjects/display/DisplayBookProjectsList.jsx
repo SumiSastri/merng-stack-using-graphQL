@@ -1,7 +1,7 @@
 import { useQuery } from '@apollo/client/react';
 
 // data
-import { GET_BOOK_PROJECTS } from "../../../utils/queries/queries";
+import { GET_BOOK_PROJECTS } from "../../../apolloClient/utils/queries";
 
 // components
 import Loading from "../../../common/loading/Loading";

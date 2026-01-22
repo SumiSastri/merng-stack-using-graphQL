@@ -136,7 +136,7 @@ export default defineConfig({
 - Router HOC is used only once in the `index.jsx` root of the app as `BrowserRouter` and is removed as `Router` HOC from a routing page
 - `useHistory` hook changed to `useNavigate`
 
-### Apollo client-side server for GraphQL v3.3-v4 breaking changes
+## Apollo client-side server for GraphQL v3.3-v4 breaking changes
 
 - Key changes from v3
 - Framework-agnostic core with React exports moved to @apollo/client/react
@@ -166,7 +166,14 @@ _Cheatsheet_
 | React context utilities                      | `@apollo/client/react/context` |
 | ApolloProvider                               | `@apollo/client/react`         |
 
-### Debug logs and challenges
+## GraphQL
+
+- Stable version is still v16 - v17 in alpha stage, non-stable version
+
+- [Quick start graphQL - npm docs](https://www.npmjs.com/package/graphql?activeTab=versions)
+- [Changelog](https://github.com/graphql/graphql-js/releases)
+
+#### Debug logs and challenges
 
 - Node versions not matching required Vite packages - change from v21 upgraded to v24
 - React components not rendering - change components `.js` files to `.jsx` to adhere to strict mode in v18
