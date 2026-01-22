@@ -1,15 +1,14 @@
 import PropTypes from "prop-types";
-// import { Link } from "react-router-dom";
+import "./cardStyles.css"; 
 
-const BookProjectCard = (props) => {
-  const { apiData, children } = props;
+const DisplayCard = ({ children, className = "" }) => {
   return (
-    <div className='col-md-6'>
-      <div className='card mb-3'>
-        <div className='card-body'>
-          <div className='d-flex justify-content-between align-items-center'>
-            {children}       
-            {/* Eg of children and routing embedded {apiData} goes here
+    <div className="card-container">
+      <div className="card-wrapper">
+        <div className="card-body">
+          <div className="card-content">
+            {children}
+             {/* Eg of children and routing embedded {apiData} goes here
             <Link
               className='btn btn-light'
               to={`/${apiData.id}`}
@@ -28,9 +27,8 @@ const BookProjectCard = (props) => {
   );
 };
 
-BookProjectCard.propTypes = {
-  apiData: PropTypes.object,
-  children: PropTypes.node,
+DisplayCard.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
-export default BookProjectCard;
+export default DisplayCard;

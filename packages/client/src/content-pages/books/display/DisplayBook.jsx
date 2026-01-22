@@ -1,12 +1,14 @@
 import React from "react";
 import { FaTrash } from "react-icons/fa";
 import { useMutation } from "@apollo/client/react";
-// import { useState } from "react";
+
 // queries
 import { GET_BOOK_ID, GET_BOOKS } from "../../../apolloClient/utils/queries/index"
 import { useGetBookIdQuery } from "../../../apolloClient/utils/hooks/book/useGetBookIdQuery";
+
 // mutations
 import { DELETE_BOOK } from "../../../apolloClient/utils/mutations/book-mutations/deleteBook";
+
 // components
 import Loading from "../../../common/loading/Loading";
 import ErrorHasOccurredComponent from "../../../common/errors/ErrorHasOccurredComponent";

@@ -17,8 +17,11 @@ const PageRouting = () => {
 
         {/* Books */}
         <Route path="/books-and-authors" element={<BooksIndex />} />
-        <Route path="/add-book-form" element={<AddBook />} />
         <Route path="/books-and-authors/:id" element={<DisplayBook />} />
+
+
+        {/* forms */}
+        <Route path="/add-book-form" element={<AddBook />} />
         <Route path="/update-book-form/:id" element={<UpdateBook />} />
 
         {/* Book Clients */}

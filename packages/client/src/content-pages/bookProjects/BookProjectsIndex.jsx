@@ -3,17 +3,17 @@ import { NavLink } from "react-router-dom";
 import "../.././App.css";
 import DisplayBookProjectsList from "./display/DisplayBookProjectsList";
 import AddBookProjectForm from "./forms/AddBookProjectForm";
+import BackToHome from "../../common/back-to-home";
 
 const BookProjectsIndex = () => {
   return (
     <div>
       <h2>Book Project's Page</h2>
-      <NavLink to='/' className='btn btn-dark btn-sm w-25 d-inline ms-auto'>
-        Back to Home Page
-      </NavLink>
+      <BackToHome />
       <div className='container p-3'>
         <AddBookProjectForm />
       </div>
+      {/* FIXME RENDERS ONLY ON DATA LOADED*/}
       <DisplayBookProjectsList />
     </div>
   );
