@@ -1,5 +1,4 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { FaTrash } from "react-icons/fa";
 
 import DisplayCard from "../../../common/displayCard/DisplayCard";
 

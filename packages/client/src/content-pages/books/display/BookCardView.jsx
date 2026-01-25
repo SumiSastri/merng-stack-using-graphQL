@@ -11,6 +11,7 @@ import Loading from "../../../common/loading/Loading";
 import ErrorHasOccurredComponent from "../../../common/errors/ErrorHasOccurredComponent";
 
 const BookCardView = ({ bookId}) => {
+  // API data fetch - data shape data.book.name (mocks book.name)
   const { error, loading, data,  } = useGetBookIdQuery(bookId);
   const [deleteBook] = useMutation(DELETE_BOOK, {
     variables: { id: bookId },

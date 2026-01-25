@@ -16,7 +16,6 @@ Knowledge of React, GitHub (version control), code editors and working in a mono
 
 3.GitHub account
 
-
 ## January 2026
 
 1._Node environment_

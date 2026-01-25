@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 // mock data
 import { booksMocks } from "../../../mocks/booksMockData";
 
-// queries
+// api data
 import { useGetBooksQuery } from "../../../apolloClient/utils/hooks/book/useGetBooksQuery";
 import { GET_BOOKS } from "../../../apolloClient/utils/queries";
 
@@ -15,19 +15,20 @@ import BookListView from "./BookListView";
 import SearchInput from "../../../common/searchBar";
 import { FaSearch } from "react-icons/fa";
 
-const DisplayBooks = () => {
+const DisplayBooks = ({USE_API=false, bookMocks }) => {
   // handle routing
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Toggle between API and Mock data
-  const USE_API = false; // set to true to use API in dev mode
   const { error, loading, data } = useGetBooksQuery(GET_BOOKS, {
     variables: { id },
     skip: !USE_API, // skip query if not using API
   });
 
-  const books = USE_API ? data?.books ?? [] : booksMocks; // fall back to empty array if data is undefined
+  // resolve data source
+  const books = USE_API ? data?.books ?? [] : booksMocks;
+  
+  // guard against rendering before query completes
   if (USE_API && loading) return <Loading />;
   if (USE_API && error) return <ErrorHasOccurredComponent />;
 
@@ -42,7 +43,9 @@ const DisplayBooks = () => {
     );
   }, [books, searchTerm]);
 
-
+  // conditionally render only when not using API or when using API and data is loaded
+    if(!USE_API || (USE_API && !loading && !error))
+    {
   return (
     <section>
           <p>
@@ -68,6 +71,9 @@ const DisplayBooks = () => {
       ))}
     </section>
   );
+}  return (
+null
+);  
 };
 
 export default DisplayBooks;
