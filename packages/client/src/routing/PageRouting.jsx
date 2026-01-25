@@ -8,11 +8,13 @@ import DisplayBookProject from "../content-pages/bookProjects/display/DisplayBoo
 import AddBook from "../content-pages/books/forms/AddBook";
 import BookCardView from "../content-pages/books/display/BookCardView";
 import UpdateBook from "../content-pages/books/forms/UpdateBook";
+import AboutPage from "../content-pages/AboutPage";
 
 const PageRouting = () => {
   return (
       <Routes>
         {/* Home page with links */}
+            <Route path="/about" element={<AboutPage/>} />
         <Route path="/" element={<PageLinks />} />
 
         {/* Books */}

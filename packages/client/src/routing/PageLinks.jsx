@@ -6,6 +6,9 @@ const PageLinks = () => {
   return (
     <nav className="page-links">
       <ul className="page-links-list">
+              <li>
+          <NavLink to="/about">About</NavLink>
+        </li>
         <li>
           <NavLink to="/books">Book Catalog</NavLink>
         </li>

@@ -41,11 +41,11 @@ h3{
     color: black;
   }
 
-/* section {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+section {
+  display: block;
+
   gap: 1rem;
-} */
+}
 
 /* books  */
 #book-details{
