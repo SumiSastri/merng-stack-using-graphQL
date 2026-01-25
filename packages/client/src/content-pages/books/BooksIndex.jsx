@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-
-import { FaList, FaUser } from "react-icons/fa";
+import { FaList} from "react-icons/fa";
 import "../.././App.css";
+
 import DisplayBooks from "./display/DisplayBooks";
 import BackToHome from "../../common/back-to-home";
 
@@ -13,13 +13,12 @@ const BooksIndex = () => {
       <NavLink to='/add-book-form'>
        <button className='btn-secondary m-3'>     
           <FaList className='icon' />
-          <FaUser className='icon' />
-      Add A Book & Author
+      Add Book
         </button>
       </NavLink>
+      <section>
       <DisplayBooks />
-      <div className='container p-3'>
-      </div>
+</section>
     </div>
   );
 };

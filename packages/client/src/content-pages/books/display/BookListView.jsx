@@ -16,7 +16,6 @@ const BookListView = ({
       <div className="card-content-left"
        onClick={() => navigate(`/books/${book.id}`)} >
         <h5>{book.name}</h5>
-        <p>Genre: <strong>{book.genre}</strong></p>
         <p>Author: <strong>{book.author.name}</strong></p>
 
       </div>
