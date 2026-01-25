@@ -70,20 +70,34 @@ li {
 }
 
 .btn-primary {
-  background-color: grey !important;
+  background-color: grey;
+  padding: 2px;
+  margin: 2px;
 }
 .btn-secondary {
   background-color: lightseagreen;
+  padding: 2px;
+  margin: 2px;
 }
 
-.btn-primary:hover {
-  background-color: lightgrey;
+.btn-danger {
+  background-color: palevioletred;
+  padding: 2px;
+  margin: 2px;
+}
+
+.btn-danger:hover {
+  background-color: palevioletred;
   opacity: 0.9;
+  padding: 2px;
+  margin: 2px;
 }
 
 .btn-secondary:hover {
   background-color: lightskyblue;
   opacity: 0.9;
+  padding: 2px;
+  margin: 2px;
 }
 
 .icon {

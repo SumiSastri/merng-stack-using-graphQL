@@ -7,13 +7,13 @@ const PageLinks = () => {
     <nav className="page-links">
       <ul className="page-links-list">
         <li>
-          <NavLink to="/books-and-authors">Books and Authors</NavLink>
+          <NavLink to="/books">Book Catalog</NavLink>
         </li>
         <li>
-          <NavLink to="/book-clients">Book Clients</NavLink>
+          <NavLink to="/clients">Client List</NavLink>
         </li>
         <li>
-          <NavLink to="/book-projects">Book Projects</NavLink>
+          <NavLink to="/workflows">Workflows</NavLink>
         </li>
       </ul>
     </nav>

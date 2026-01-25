@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 import { useQuery, useMutation } from '@apollo/client/react';
 import { Link } from "react-router-dom";
-// styling
-import "../../../App.css";
-// STEP 1 set up front-end query data required - check types against back end schema
-import { useGetBooksQuery } from "../../../apolloClient/utils/hooks/book/useGetBooksQuery";
-// STEP 2 mutate front-end data - check against back end eg - string template can be called
-// CREATE_BOOK but the actual mutuation the same name as back end addBook()
-import { CREATE_BOOK } from "../../../apolloClient/utils/mutations/book-mutations/createBook";
 
-// This query is to load authors and does not use a hook
+// data fetching
+import { useGetBooksQuery } from "../../../apolloClient/utils/hooks/book/useGetBooksQuery";
+import { CREATE_BOOK } from "../../../apolloClient/utils/mutations/book-mutations/createBook";
 import { GET_AUTHORS } from "../../../apolloClient/utils/queries/index";
 
 // components
@@ -25,6 +20,7 @@ const AddBook = () => {
   const { loading, error, data } = useQuery(GET_AUTHORS);
   console.log("Load Authors", { error, data, loading });
   // load authors and custom function for the select filter
+  
   function displayAuthors(loading, data) {
     if (error) return `Error! ${error.message}`;
     if (loading) {
@@ -39,7 +35,7 @@ const AddBook = () => {
       });
     }
   }
-// STEP 3: use the mutation to create a custom function for the submit payload
+// set up payload
   const [createBook] = useMutation(CREATE_BOOK, {
     variables: {
       name,
@@ -50,6 +46,12 @@ const AddBook = () => {
 
   // refetch data - call it within the submit function if page routed to custom form page
   const {refetch } = useGetBooksQuery();
+
+  // guard against rendering before query completes
+   if (loading) return <Loading />;
+  if (error) return <ErrorHasOccurredComponent />;
+  if (!data?.book) return null;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Log submit new book:", name, genre, authorId);
@@ -66,27 +68,13 @@ const AddBook = () => {
     };
     resetFormFields();
   };
-  
-
-  if (error)
-  return (
-    <div>
-      <ErrorHasOccurredComponent />
-    </div>
-  );
-if (loading)
-  return (
-    <div>
-      <Loading />
-    </div>
-  );
   refetch();
   
   return (
     <form id='add-book' onSubmit={handleSubmit}>
           <h4>Add a new book</h4>
           <Link to='/books-and-authors' className='btn btn-dark btn-sm w-25 d-inline ms-auto'>
-        Back to Books and Authors Page
+  Book Catalog
       </Link>
       <hr/>
       <div className='field'>

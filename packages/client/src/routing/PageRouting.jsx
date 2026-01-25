@@ -6,7 +6,7 @@ import BookProjectsIndex from "../content-pages/bookProjects/BookProjectsIndex";
 import BooksIndex from "../content-pages/books/BooksIndex";
 import DisplayBookProject from "../content-pages/bookProjects/display/DisplayBookProject";
 import AddBook from "../content-pages/books/forms/AddBook";
-import DisplayBook from "../content-pages/books/display/DisplayBook";
+import BookCardView from "../content-pages/books/display/BookCardView";
 import UpdateBook from "../content-pages/books/forms/UpdateBook";
 
 const PageRouting = () => {
@@ -16,20 +16,19 @@ const PageRouting = () => {
         <Route path="/" element={<PageLinks />} />
 
         {/* Books */}
-        <Route path="/books-and-authors" element={<BooksIndex />} />
-        <Route path="/books-and-authors/:id" element={<DisplayBook />} />
+        <Route path="/books" element={<BooksIndex />} />
+        <Route path="/books/:id" element={<BookCardView />} />
 
-
-        {/* forms */}
+        {/* forms stateful */}
         <Route path="/add-book-form" element={<AddBook />} />
         <Route path="/update-book-form/:id" element={<UpdateBook />} />
 
         {/* Book Clients */}
-        <Route path="/book-clients" element={<BookClientsIndex />} />
+        <Route path="/clients" element={<BookClientsIndex />} />
 
         {/* Book Projects */}
-        <Route path="/book-projects" element={<BookProjectsIndex />} />
-        <Route path="/book-projects/:id" element={<DisplayBookProject />} />
+        <Route path="/workflows" element={<BookProjectsIndex />} />
+        <Route path="/workflows/:id" element={<DisplayBookProject />} />
       </Routes>
   );
 };
